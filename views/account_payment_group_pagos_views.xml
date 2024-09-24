@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<!-- Modificación en account_payment_group.view_account_payment_group_form para pagos a proveedores -->
+    <record id="view_account_payment_group_form_no_create" model="ir.ui.view">
+        <field name="name">account.payment.group.form.inherit.no_create</field>
+        <field name="model">account.payment.group</field>
+        <field name="inherit_id" ref="account_payment_group.view_account_payment_group_form"/>
+        <field name="arch" type="xml">
+            <!-- Partner en pagos a proveedor -->
+            <field name="partner_id" options="{'no_create': True, 'no_create_edit': True}"/>
+        </field>
+    </record>
+</odoo>	

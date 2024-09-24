@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Modificación en sale.order -->
+    <record id="view_order_form_inherit_no_create" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit.no_create</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <!-- Partner en orden de venta -->
+            <field name="partner_id" options="{'no_create': True, 'no_create_edit': True}"/>
+            <!-- Producto en líneas de venta -->
+            <field name="product_id" options="{'no_create': True, 'no_create_edit': True}"/>
+        </field>
+    </record>
+</odoo>    
