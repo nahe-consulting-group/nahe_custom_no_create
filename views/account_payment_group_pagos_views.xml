@@ -8,7 +8,7 @@
         <field name="arch" type="xml">
             <!-- Partner en pagos a proveedor -->
 	    <xpath expr="//field[@name='partner_id']" position="attribute">
-		    <attributte name="options">{'no_create': True, 'no_create_edit': True}	
+		    <attributte name="options">{'no_create': True, 'no_create_edit': True}</attribute>	
         </field>
     </record>
 </odoo>	
