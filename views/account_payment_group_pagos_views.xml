@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
-	<!-- Modificación en account_payment_group.view_account_payment_group_form para pagos a proveedores -->
+    <!-- Modificación en account_payment_group.view_account_payment_group_form para pagos a proveedores -->
     <record id="view_account_payment_group_form_no_create" model="ir.ui.view">
         <field name="name">account.payment.group.form.inherit.no_create</field>
         <field name="model">account.payment.group</field>
         <field name="inherit_id" ref="account_payment_group.view_account_payment_group_form"/>
         <field name="arch" type="xml">
-        	<field name="partner_id" context="{'default_is_company': True}" string="Customer" attrs="{'readonly':[('state', '!=', 'draft')], 'invisible':[('partner_type','!=','customer')],'required': [('partner_type','=','customer')]}" options="{'no_create': True, 'no_create_edit': True}"/>
-        	<field name="partner_id" context="{'default_is_company': True}" string="Vendor" attrs="{'readonly':[('state', '!=', 'draft')],'invisible':[('partner_type','!=','supplier')],'required': [('partner_type','=','supplier')]}" options="{'no_create': True, 'no_create_edit': True}"/>
+            <!-- Opciones en el primer partner_id para Customer -->
+            <xpath expr="//group[@name='group1']/field[@name='partner_id'][1]" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_create_edit': True}</attribute>
+            </xpath>
+            <!-- Opciones en el segundo partner_id para Vendor -->
+            <xpath expr="//group[@name='group1']/field[@name='partner_id'][2]" position="attributes">
+                <attribute name="options">{'no_create': True, 'no_create_edit': True}</attribute>
+            </xpath>
         </field>
     </record>
-</odoo>	
+</odoo>
