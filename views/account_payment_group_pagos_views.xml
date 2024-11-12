@@ -6,10 +6,8 @@
         <field name="model">account.payment.group</field>
         <field name="inherit_id" ref="account_payment_group.view_account_payment_group_form"/>
         <field name="arch" type="xml">
-            <!-- Partner en pagos a proveedor -->
-		<xpath expr="//field[@name='partner_id']" position="attributes">
-		    <attribute name="options">{'no_create': True, 'no_create_edit': True}</attribute>
-		</xpath>
+        	<field name="partner_id" context="{'default_is_company': True}" string="Customer" attrs="{'readonly':[('state', '!=', 'draft')], 'invisible':[('partner_type','!=','customer')],'required': [('partner_type','=','customer')]}" options="{'no_create': True, 'no_create_edit': True}"/>
+        	<field name="partner_id" context="{'default_is_company': True}" string="Vendor" attrs="{'readonly':[('state', '!=', 'draft')],'invisible':[('partner_type','!=','supplier')],'required': [('partner_type','=','supplier')]}" options="{'no_create': True, 'no_create_edit': True}"/>
         </field>
     </record>
 </odoo>	
