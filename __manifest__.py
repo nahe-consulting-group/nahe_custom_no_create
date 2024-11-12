@@ -23,7 +23,6 @@
     "data": [
         "views/account_move_facturas_proovedor_views.xml",
         "views/account_payment_group_pagos_views.xml",
-        "views/account_payment_group_recibos_views.xml",
         "views/sale_order_views.xml",
     ],
 }
