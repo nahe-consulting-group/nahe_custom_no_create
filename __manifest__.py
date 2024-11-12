@@ -22,7 +22,6 @@
     ### XML Data files
     "data": [
         "security/ir.model.access.csv",
-        "views/account_move_facturas_clientes_views.xml",
         "views/account_move_facturas_proovedor_views.xml",
         "views/account_payment_group_pagos_views.xml",
         "views/account_payment_group_recibos_views.xml",
